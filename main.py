@@ -16,7 +16,7 @@ class Msg(BaseModel):
 @app.get("/")
 
 async def root():
-    return {"<h1>"}
+    return "<h1>Hola</h1>"
 
 
 @app.get("/homepage")
