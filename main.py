@@ -34,4 +34,5 @@ async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
     return {"message": "Success, background task started"}
     
 
+Name: str = "Alejandro"
 
