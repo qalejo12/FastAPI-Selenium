@@ -1,5 +1,7 @@
 from fastapi import FastAPI, BackgroundTasks, HTTPException
 from pydantic import BaseModel
+
+from data import lleverInfo
 from extract import *
 import os
 
@@ -20,6 +22,14 @@ async def root():
     return "<h1>Hola Mundo</h1>"
 
 # url local http://127.0.0.1:8000/url
+
+
+@app.get("/datos")
+async def root():
+    list = []
+    datos = lleverInfo(list)
+
+    return datos
 
 @app.get("/url")
 async def url():

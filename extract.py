@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
@@ -18,8 +19,11 @@ def createDriver() -> webdriver.Chrome:
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
-    driver.get("https://www.google.com")
-    return driver.page_source
+    driver.get('https://aprendepython.es')
+
+    element = driver.find_elements(By.ID, 'aprende-python')
+
+    return type(element)
 
 def doBackgroundTask(inp):
     print("Doing background task")
