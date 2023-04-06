@@ -16,7 +16,7 @@ class Msg(BaseModel):
 @app.get("/")
 
 async def root():
-    return {"message": "Hello World. Welcome to FastAPI!"}
+    return {"<h1>"}
 
 
 @app.get("/homepage")
