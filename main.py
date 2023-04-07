@@ -33,7 +33,7 @@ list = []
 
 lista = lleverInfo(list)
 
-datos_list = [Dato(dato1 = lista[0], dato2 = lista[1], dato3 = lista    [2])]
+datos_list = [Dato(dato1 = lista[0], dato2 = lista[1], dato3 = lista[2], dato4 = lista[3])]
 
 @app.get("/datos")
 async def root():
