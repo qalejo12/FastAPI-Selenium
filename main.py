@@ -23,21 +23,12 @@ async def root():
 
 # url local http://127.0.0.1:8000/url
 
-class Dato(BaseModel):
-    dato1: str
-    dato2: str
-    dato3: str
-    dato4: str
-
-list = []
-
-lleverInfo(list)
-
-datos_list = [Dato(dato1 = list[1], dato2 = list[2], dato3 = list[3], dato4 = list[4])]
-
 @app.get("/datos")
 async def root():
-    return datos_list
+    list = []
+
+    datos = lleverInfo(list)
+    return datos[0]
 
 @app.get("/url")
 async def url():
