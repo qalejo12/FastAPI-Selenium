@@ -8,7 +8,9 @@ class User(BaseModel):
     last_name: str
     cedula: int
 
-users = [User("Alejo", "Quintero", 2112243)]
+users_list = [User(name="Alejo", last_name="Quintero", cedula= 2112243),
+                User(name="Luis", last_name="Lopez", cedula= 1482634),
+                User(name="Carlos", last_name="rueda", cedula= 245365465)]
 
 @app.get("/usersjson")
 async def users():
@@ -16,6 +18,6 @@ async def users():
             {"name": "Luis", "last_name": "Lopez", "cedula": 1482634},
             {"name": "Carlos", "last_name": "rueda", "cedula": 245365465}]
 
-@app.get("/usersclass")
+@app.get("/users")
 async def users():
-    return User(name= "Alejo", last_name= "Quintero", cedula= 2112243)
+    return users_list
