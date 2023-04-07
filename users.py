@@ -24,7 +24,15 @@ async def users():
     return users_list
 
 @app.get("/user/{id}")
+async def users(idu: int):
+    return searchUser(idu)
+
+@app.get("/userquery/")
 async def users(id: int):
+    return searchUser(id)
+
+
+def searchUser(id):
     users = filter(lambda User: User.id == id, users_list)
     try:
         return list(users)[0]
