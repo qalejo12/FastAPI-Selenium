@@ -28,7 +28,7 @@ async def root():
     list = []
 
     datos = lleverInfo(list)
-    return datos[0]
+    return datos
 
 @app.get("/url")
 async def url():
