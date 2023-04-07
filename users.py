@@ -9,9 +9,9 @@ class User(BaseModel):
     last_name: str
     cedula: int
 
-users_list = [User(name="Alejo", last_name="Quintero", cedula= 2112243),
-                User(name="Luis", last_name="Lopez", cedula= 1482634),
-                User(name="Carlos", last_name="rueda", cedula= 245365465)]
+users_list = [User(id=1, name="Alejo", last_name="Quintero", cedula= 2112243),
+                User(id=2, name="Luis", last_name="Lopez", cedula= 1482634),
+                User(id=3, name="Carlos", last_name="rueda", cedula= 245365465)]
 
 @app.get("/usersjson")
 async def users():
@@ -22,3 +22,8 @@ async def users():
 @app.get("/users")
 async def users():
     return users_list
+
+@app.get("/user/{id}")
+async def users(id: int):
+    users = filter(lambda User: User.id == id, users_list)
+    return list(users)
