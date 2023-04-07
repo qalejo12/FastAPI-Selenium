@@ -24,8 +24,8 @@ async def users():
     return users_list
 
 @app.get("/user/{id}")
-async def users(idu: int):
-    return searchUser(idu)
+async def users(id: int):
+    return searchUser(id)
 
 @app.get("/userquery/")
 async def users(id: int):
